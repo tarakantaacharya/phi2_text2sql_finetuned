@@ -1,0 +1,14 @@
+Flask
+pymysql
+requests
+flask-cors
+python-dotenv
+gunicorn
+accelerate 
+bitsandbytes 
+datasets 
+peft 
+transformers 
+einops 
+torch 
+trl

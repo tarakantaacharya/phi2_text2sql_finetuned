@@ -1,0 +1,27 @@
+[
+    {
+        "text_query": "What are the name and location of the cinema with the largest capacity?",
+        "sql_command": "SELECT name ,  LOCATION FROM cinema ORDER BY capacity DESC LIMIT 1",
+        "text": "### Text Query: What are the name and location of the cinema with the largest capacity?\n### SQL Command: SELECT name ,  LOCATION FROM cinema ORDER BY capacity DESC LIMIT 1"
+    },
+    {
+        "text_query": "What are the different card types, and how many cards are there of each?",
+        "sql_command": "SELECT card_type_code ,  count(*) FROM Customers_cards GROUP BY card_type_code",
+        "text": "### Text Query: What are the different card types, and how many cards are there of each?\n### SQL Command: SELECT card_type_code ,  count(*) FROM Customers_cards GROUP BY card_type_code"
+    },
+    {
+        "text_query": "Find the first and last names of all the female (sex is F) students who have president votes.",
+        "sql_command": "SELECT DISTINCT T1.Fname ,  T1.LName FROM STUDENT AS T1 JOIN VOTING_RECORD AS T2 ON T1.StuID  =  T2.President_VOTE WHERE T1.sex  =  \"F\"",
+        "text": "### Text Query: Find the first and last names of all the female (sex is F) students who have president votes.\n### SQL Command: SELECT DISTINCT T1.Fname ,  T1.LName FROM STUDENT AS T1 JOIN VOTING_RECORD AS T2 ON T1.StuID  =  T2.President_VOTE WHERE T1.sex  =  \"F\""
+    },
+    {
+        "text_query": "Which cities are in European countries where English is not the official language?",
+        "sql_command": "SELECT DISTINCT T2.Name FROM country AS T1 JOIN city AS T2 ON T2.CountryCode  =  T1.Code WHERE T1.Continent  =  'Europe' AND T1.Name NOT IN (SELECT T3.Name FROM country AS T3 JOIN countrylanguage AS T4 ON T3.Code  =  T4.CountryCode WHERE T4.IsOfficial  =  'T' AND T4.Language  =  'English')",
+        "text": "### Text Query: Which cities are in European countries where English is not the official language?\n### SQL Command: SELECT DISTINCT T2.Name FROM country AS T1 JOIN city AS T2 ON T2.CountryCode  =  T1.Code WHERE T1.Continent  =  'Europe' AND T1.Name NOT IN (SELECT T3.Name FROM country AS T3 JOIN countrylanguage AS T4 ON T3.Code  =  T4.CountryCode WHERE T4.IsOfficial  =  'T' AND T4.Language  =  'English')"
+    },
+    {
+        "text_query": "What is the city with the smallest GDP? Return the city and its GDP.",
+        "sql_command": "SELECT city ,  GDP FROM city ORDER BY GDP LIMIT 1",
+        "text": "### Text Query: What is the city with the smallest GDP? Return the city and its GDP.\n### SQL Command: SELECT city ,  GDP FROM city ORDER BY GDP LIMIT 1"
+    }
+]
